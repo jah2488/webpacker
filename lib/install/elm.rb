@@ -23,7 +23,7 @@ copy_file "#{__dir__}/examples/elm/Main.elm",
 say "Installing all Elm dependencies"
 run "yarn add elm elm-webpack-loader"
 run "yarn add --dev elm-hot-loader"
-run "yarn run elm package install -- --yes"
+run "yarn run elm install -- --yes"
 
 say "Updating webpack paths to include .elm file extension"
 insert_into_file Webpacker.config.config_path, "- .elm\n".indent(4), after: /extensions:\n/
